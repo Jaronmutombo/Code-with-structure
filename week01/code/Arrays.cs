@@ -1,3 +1,5 @@
+using System.Globalization;
+
 public static class Arrays
 {
     /// <summary>
@@ -6,7 +8,9 @@ public static class Arrays
     /// integer greater than 0.
     /// </summary>
     /// <returns>array of doubles that are the multiples of the supplied number</returns>
-    public static double[] MultiplesOf(double number, int length)
+
+    public static double[] MultiplesOf(double number, int length) /// Function to produce an array of multiples of 3 and length 5
+   
     {
         // TODO Problem 1 Start
         // Plan:
@@ -15,15 +19,17 @@ public static class Arrays
         // 3. Loop from index 0 to length - 1. At each index i, store number * (i + 1).
         // 4. Return the filled array.
 
-        double[] multiples = new double[length];
+        double[] multiples = new double[length];  /// Create an array of doubles with the specified length
 
-        for (int i = 0; i < length; i++)
+        for (int i = 0; i < length; i++)   /// Loop through each index of the array
         {
-            multiples[i] = number * (i + 1);
+            multiples[i] = number * (i + 1);   /// Calculate the multiple and store it in the array
         }
 
-        return multiples;
+        return multiples; /// Return the filled array of multiples
     }
+
+
 
     /// <summary>
     /// Rotate the 'data' to the right by the 'amount'.  For example, if the data is 
@@ -43,12 +49,18 @@ public static class Arrays
         // 4. Clear the original list, then add the tail followed by the head.
         //    That mutates 'data' in place, which is required by the problem.
 
-        int splitIndex = data.Count - amount;
-        List<int> tail = data.GetRange(splitIndex, amount);
-        List<int> head = data.GetRange(0, splitIndex);
+        int splitIndex = data.Count - amount;  // Calculate the index where the list will be split into first and last parts
+        List<int> tail = data.GetRange(splitIndex, amount);    // Get the last 'amount' items from the list as the last part
+        List<int> head = data.GetRange(0, splitIndex);  // Get the items before the tail as the first part
 
-        data.Clear();
-        data.AddRange(tail);
-        data.AddRange(head);
+        data.Clear();  // Clear the original list to prepare for adding the rotated elements
+        data.AddRange(tail);  // Add the tail elements to the front of the list
+        data.AddRange(head);  // Add the head elements after the tail to complete the rotation
     }
 }
+
+
+
+
+
+
