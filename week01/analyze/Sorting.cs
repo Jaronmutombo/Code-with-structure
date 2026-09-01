@@ -15,3 +15,6 @@
         }
     }
 }
+
+
+/// the big O here is O(n^2) because we have a nested loop. The outer loop runs n times and the inner loop runs n times for each iteration of the outer loop, resulting in a total of n * n = n^2 iterations.
