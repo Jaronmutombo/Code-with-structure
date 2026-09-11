@@ -26,4 +26,53 @@ public class PriorityQueueTests
     }
 
     // Add more test cases as needed below.
+
+    [TestMethod]
+    // Scenario: add items with different priorities and dequeue them to check if the highest priority item is returned first
+    // Expected Result: the item with the highest priority is returned first
+    // Defect(s) Found: 
+    public void TestPriorityQueue_3()
+    {
+        var priorityQueue = new PriorityQueue();
+
+        priorityQueue.Enqueue("Item1", 1);
+        priorityQueue.Enqueue("Item2", 10);
+
+        var result = priorityQueue.Dequeue();
+        Assert.AreEqual("Item2", result);
+    }
+
+    [TestMethod]
+    // Scenario: add items with the same priority and dequeue them to check if they are returned in FIFO order
+    // Expected Result: items with the same priority are returned in FIFO order
+    // Defect(s) Found: 
+    public void TestPriorityQueue_4()
+    {
+        var priorityQueue = new PriorityQueue();
+
+        priorityQueue.Enqueue("Item1", 9);
+        priorityQueue.Enqueue("Item2", 9);
+        priorityQueue.Enqueue("Item3", 9);
+        priorityQueue.Enqueue("Item4", 9);
+
+        var result = priorityQueue.Dequeue();
+        Assert.AreEqual("Item1", result);
+        
+    }
+
+    [TestMethod]
+    // Scenario: add items with different priorities and dequeue them to check if the highest priority item is returned first
+    // Expected Result: the item with the highest priority is returned first
+    // Defect(s) Found: 
+    public void TestPriorityQueue_5()
+    {
+        var priorityQueue = new PriorityQueue();
+
+        priorityQueue.Enqueue("Item1", 1);
+        priorityQueue.Enqueue("Item2", 10);
+
+        var result = priorityQueue.Dequeue();
+        Assert.AreEqual("Item2", result);
+    }
+
 }
