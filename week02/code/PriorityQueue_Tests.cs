@@ -2,31 +2,33 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 // TODO Problem 2 - Write and run test cases and fix the code to match requirements.
 
+//[TestClass]
+//public class PriorityQueueTests
+//{
+//    [TestMethod]
+    // Scenario: 
+    // Expected Result: 
+    // Defect(s) Found: 
+//    public void TestPriorityQueue_1()
+//    {
+//        var priorityQueue = new PriorityQueue();
+//        Assert.Fail("Implement the test case and then remove this.");
+//    }
+
+//    [TestMethod]
+    // Scenario: 
+    // Expected Result: 
+    // Defect(s) Found: 
+//    public void TestPriorityQueue_2()
+//    {
+//        var priorityQueue = new PriorityQueue();
+//        Assert.Fail("Implement the test case and then remove this.");//
+//    }
+
+    // Add more test cases as needed below.
 [TestClass]
 public class PriorityQueueTests
 {
-    [TestMethod]
-    // Scenario: 
-    // Expected Result: 
-    // Defect(s) Found: 
-    public void TestPriorityQueue_1()
-    {
-        var priorityQueue = new PriorityQueue();
-        Assert.Fail("Implement the test case and then remove this.");
-    }
-
-    [TestMethod]
-    // Scenario: 
-    // Expected Result: 
-    // Defect(s) Found: 
-    public void TestPriorityQueue_2()
-    {
-        var priorityQueue = new PriorityQueue();
-        Assert.Fail("Implement the test case and then remove this.");
-    }
-
-    // Add more test cases as needed below.
-
     [TestMethod]
     // Scenario: add items with different priorities and dequeue them to check if the highest priority item is returned first
     // Expected Result: the item with the highest priority is returned first
@@ -70,9 +72,23 @@ public class PriorityQueueTests
 
         priorityQueue.Enqueue("Item1", 1);
         priorityQueue.Enqueue("Item2", 10);
+        priorityQueue.Enqueue("Item3", 100);
 
-        var result = priorityQueue.Dequeue();
-        Assert.AreEqual("Item2", result);
+        Assert.AreEqual("Item3", priorityQueue.Dequeue());
+        Assert.AreEqual("Item2", priorityQueue.Dequeue());
+        Assert.AreEqual("Item1", priorityQueue.Dequeue());
+    }
+
+    [TestMethod]
+    // Scenario: add items with the same priority and dequeue them to check if they are returned in FIFO order
+    // Expected Result: items with the same priority are returned in FIFO order
+    // Defect(s) Found: 
+    public void TestPriorityQueue_6()
+    {
+        var priorityQueue = new PriorityQueue();
+
+        var exception = Assert.ThrowsException<InvalidOperationException>(() => priorityQueue.Dequeue());
+        Assert.AreEqual("The queue is empty.", exception.Message);
     }
 
 }
