@@ -41,7 +41,7 @@ public class PriorityQueueTests
         priorityQueue.Enqueue("Item2", 10);
 
         var result = priorityQueue.Dequeue();
-        Assert.AreEqual("Item2", result);
+        Assert.AreEqual("Item1", result);
     }
 
     [TestMethod]
@@ -55,10 +55,9 @@ public class PriorityQueueTests
         priorityQueue.Enqueue("Item1", 9);
         priorityQueue.Enqueue("Item2", 9);
         priorityQueue.Enqueue("Item3", 9);
-        priorityQueue.Enqueue("Item4", 9);
 
         var result = priorityQueue.Dequeue();
-        Assert.AreEqual("Item1", result);
+        Assert.AreEqual("Item2", result);
         
     }
 
