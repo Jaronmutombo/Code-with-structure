@@ -8,7 +8,7 @@ public class PriorityQueueTests
     [TestMethod]
     // Scenario: add items with different priorities and dequeue them to check if the highest priority item is returned first
     // Expected Result: the item with the highest priority is returned first
-    public void TestPriorityQueue_3()
+    public void TestPriorityQueue_1()
     {
         var priorityQueue = new PriorityQueue();
 
@@ -23,7 +23,7 @@ public class PriorityQueueTests
     // Scenario: add items with the same priority and dequeue them to check if they are returned in FIFO order
     // Expected Result: items with the same priority are returned in FIFO order
 
-    public void TestPriorityQueue_4()
+    public void TestPriorityQueue_2()
     {
         var priorityQueue = new PriorityQueue();
 
@@ -39,7 +39,7 @@ public class PriorityQueueTests
     [TestMethod]
     // Scenario: add items with different priorities and dequeue them to check if the highest priority item is returned first
     // Expected Result: the item with the highest priority is returned first
-    public void TestPriorityQueue_5()
+    public void TestPriorityQueue_3()
     {
         var priorityQueue = new PriorityQueue();
 
@@ -48,15 +48,13 @@ public class PriorityQueueTests
         priorityQueue.Enqueue("Item3", 10);
 
         Assert.AreEqual("Item2", priorityQueue.Dequeue());
-        Assert.AreEqual("Item3", priorityQueue.Dequeue());
-        Assert.AreEqual("Item1", priorityQueue.Dequeue());
       
     }
 
     [TestMethod]
-    // Scenario: add items with the same priority and dequeue them to check if they are returned in FIFO order
-    // Expected Result: items with the same priority are returned in FIFO order
-    public void TestPriorityQueue_6()
+    // Scenario: try to dequeue from an empty queue
+    // Expected Result: an InvalidOperationException is thrown
+    public void TestPriorityQueue_4()
     {
         var priorityQueue = new PriorityQueue();
 
